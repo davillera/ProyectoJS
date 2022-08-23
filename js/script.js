@@ -1,6 +1,6 @@
 
-document.getElementById("bandera0").src = `./banderas/${from.value}.png`
-document.getElementById("bandera1").src = `./banderas/${to.value}.png`
+document.getElementById("bandera0").src = `/banderas/${from.value}.png`
+document.getElementById("bandera1").src = `/banderas/${to.value}.png`
 
 importe = document.getElementById("importe")
 from = document.getElementById("from")
@@ -13,8 +13,8 @@ btnCalcular.addEventListener("click", () => calcular());
 
 
 function cambioBandera(){
-    document.getElementById("bandera0").src = `./banderas/${from.value}.png`
-    document.getElementById("bandera1").src = `./banderas/${to.value}.png`
+    document.getElementById("bandera0").src = `/banderas/${from.value}.png`
+    document.getElementById("bandera1").src = `/banderas/${to.value}.png`
 }
 
 
