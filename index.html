@@ -4,22 +4,23 @@
     <meta charset="utf-8">
     <title>Conversor de Divisas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
     <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/1676172edd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-
 <body>
     <main>
+        <div class="currency-icon">
+            <img src="./img/currency-icon.png" alt="currencu-icon">
+        </div>
             <h1>Conversor de Divisas</h1>
             <div class="monto">
                 <p>Escribe un monto</p>
                 <input type="number" value="1000" id="importe">
             </div>
-
-            <div>
-                <div>
-                    <p>De:</p>
+            <div class="options">
+                <div class="option">
                     <div>
                         <div class="banderas"><img alt="Bandera" id="bandera0" class="bandera"></div>
                         <select id="from" onchange="cambioBandera()" class="flagChange">
@@ -79,14 +80,13 @@
                     </div>
                 </div>
 
-                <label for="cambio" class="cambio" id="cambio">
-                    <i class="fas fa-exchange-alt"></i>
-                </label>
+                <div class="btn">
+                    <button class="btnCambio" id="btnCambio">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                </div>
 
-                <input type="button" class="btn" id="btnCambio">
-
-                <div>
-                    <p>A: </p>
+                <div class="option">
                     <div>
                         <div class="banderas"><img alt="Bandera" id="bandera1" class="bandera" ></div>
                             <select id="to" onchange="cambioBandera()" class="flagChange">
@@ -146,10 +146,15 @@
                     </div>
                 </div>
             </div>
-            <button id="btnCalcular">Convertir</button>
-
+            <div class="btnCalcular">
+                <button id="btnCalcular" class="btn ">CONVERTIR</button>
+            </div>
             <p id="resultado"></p>
     </main>
+    <footer>
+        <i class="fa-regular fa-copyright"></i>
+        <a href="https://github.com/DaniVille"><p class="author"> Code By Daniel</p></a>
+    </footer>
     <script src="./js/script.js"></script>
 </body>
 
