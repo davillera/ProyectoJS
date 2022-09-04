@@ -5,9 +5,15 @@ document.getElementById("bandera1").src = `../banderas/${to.value}.png`
 importe = document.getElementById("importe")
 from = document.getElementById("from")
 to = document.getElementById("to")
+let historial =[]
 
 const btnCalcular = document.getElementById("btnCalcular");
 btnCalcular.addEventListener("click", () => calcular());
+
+const btnLimpiar = document.getElementById("btnLimpiar")
+btnLimpiar.addEventListener("click", () =>{
+    document.getElementById("historial").innerHTML = ""
+})
 
 const btnCambio = document.getElementById("btnCambio")
 btnCambio.addEventListener("click", () =>{
@@ -17,15 +23,10 @@ btnCambio.addEventListener("click", () =>{
     cambioBandera()
 })
 
-
-
-
 function cambioBandera(){
     document.getElementById("bandera0").src = `../banderas/${from.value}.png`
     document.getElementById("bandera1").src = `../banderas/${to.value}.png`
 }
-
-
 
 function calcular(){
     let myHeaders = new Headers();
@@ -43,8 +44,22 @@ function calcular(){
     .then(response => response.json())
     .then((data) =>{
         let total = data.result
-        document.getElementById("resultado").innerHTML = `${importe.value} ${from.value} son ${total} ${to.value} `
-    })
+        console.log(data.result);
 
+        historial.push({
+            from: `${from.value}`,
+            to: `${to.value}`,
+            amount: `${importe.value}`,
+            result: `${total}`
+        })
+
+        let resultado = document.getElementById("historial")
+        // const element = `<p> ${from.value} ${importe.value} = ${to.value} ${total}</p>`
+        const element = document.createElement("br")
+        const contenido = document.createTextNode(`${from.value} ${importe.value} = ${to.value} ${total}`)
+        resultado.appendChild(contenido)
+        resultado.appendChild(element)
+    })
     .catch(error => console.log('error', error))
 }
+

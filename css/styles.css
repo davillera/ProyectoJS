@@ -1,9 +1,9 @@
 @font-face {
     font-family:"product-sans";
-    src: url("/Fuentes/google-sans/ProductSans-Black.woff");
-    src: url("/Fuentes/google-sans/ProductSans-Bold.woff");
-    src: url("/Fuentes/google-sans/ProductSans-Medium.woff");
-    src: url("/Fuentes/google-sans/ProductSans-Regular.woff");
+    src: url("/fonts/google-sans/ProductSans-Black.woff");
+    src: url("/fonts/google-sans/ProductSans-Bold.woff");
+    src: url("/fonts/google-sans/ProductSans-Medium.woff");
+    src: url("/fonts/google-sans/ProductSans-Regular.woff");
 }
 *{
     margin: 0;
@@ -15,12 +15,41 @@ h1{
     padding-bottom: 30px;
     color: #010326;
 }
-.resultado{
-    color: #010326;
+main{
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-columns: 400px 400px
 }
 p{
     color: #D5DAF2;
     padding-left: 5px;
+}
+.resultado{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.containerLimpiar{
+    position: relative;
+    display:block;
+    align-items: center;
+    justify-content: center;
+    background-color: #D5DAF2;
+    border-radius: 50px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    max-width: 400px;
+    max-height: 475px;
+    overflow-y: scroll;
+}
+.containerLimpiar .resultado p{
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+    color: #010326;
+}
+
+#historial{
+    color: #010326;
 }
 body{
     background-color: #010326;
@@ -29,13 +58,13 @@ body{
     justify-content: center;
     min-height: 100vh;
 }
-div{
-    padding-bottom: 10px;
-}
-main{
+
+.main{
     padding: 50px;
     background-color: #D5DAF2;
     border-radius: 50px;
+    width: 400px;
+    max-width: 400px;
 }
 select{
     border-color: #010326;
@@ -46,7 +75,7 @@ select{
 }
 .fa-copyright{
     color: #D5DAF2;
-    animation: rotation 2s infinite linear;
+    animation: rotation 2.5s infinite linear;
 }
 @keyframes rotation {
     from{
@@ -70,6 +99,7 @@ select{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 5px;
 }
 .bandera{
     border-radius: 5px;
@@ -80,6 +110,31 @@ select{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+.btnLimpiar{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.containerLimpiar::-webkit-scrollbar-track {
+    background:#D5DAF2;        /* color of the tracking area */
+        }
+.containerLimpiar::-webkit-scrollbar {
+        width: 12px;               /* width of the entire scrollbar */
+        }
+.containerLimpiar::-webkit-scrollbar-thumb {
+        background-color: #D5DAF2;    /* color of the scroll thumb */
+        border-radius: 20px;       /* roundness of the scroll thumb */
+        border: 3px solid #010326;  /* creates padding around scroll thumb */
+        }
+#btnLimpiar{
+    background-color: #010326;
+    font-weight: bold;
+    color: #D5DAF2;
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
 }
 .btnCambio{
     display: flex;
@@ -98,6 +153,7 @@ select{
 .btnCalcular{
     display: flex;
     justify-content: center;
+    padding-top: 20px;
 }
 #btnCalcular{
     background-color: #010326;
